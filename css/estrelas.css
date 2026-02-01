@@ -1,0 +1,72 @@
+/* estrelas.css */
+
+.header-section {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-top: var(--spacing-sm);
+}
+
+.stars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.star-card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(46,74,62,0.05);
+}
+
+.star-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.star-visual {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.star-type {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.star-info h3 {
+    margin-bottom: 1rem;
+    color: var(--green-dark);
+}
+
+.star-data p {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.star-data strong {
+    color: var(--green-medium);
+}

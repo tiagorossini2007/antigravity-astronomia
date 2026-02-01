@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRO.BIO - Limites do Sistema Solar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nuvem.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html" class="brand">ASTRO.BIO</a>
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Cientistas</a></li>
+            <li><a href="planetas.html">Planetas</a></li>
+            <li><a href="estrelas.html">Estrelas</a></li>
+            <li><a href="nuvem-oort-kuiper.html" class="active">Nuvem de Oort</a></li>
+            <li><a href="cosmologia.html">Cosmologia</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="outer-solar-container">
+            <!-- Section 1: Kuiper Belt -->
+            <section class="split-section kuiper-section fade-in">
+                <div class="content-block">
+                    <span class="label">30 a 50 UA do Sol</span>
+                    <h1>Cinturão de Kuiper</h1>
+                    <p class="description">
+                        Uma vasta região além de Netuno, povoada por corpos gelados e planetas anões. 
+                        É o lar de Plutão, Eris, Makemake e Haumea. Diferente do cinturão de asteroides, 
+                        o Cinturão de Kuiper é muito mais vasto e massivo.
+                    </p>
+                    <div class="fact-box">
+                        <h3>Plutão Reclassificado</h3>
+                        <p>
+                            Em 2006, a União Astronômica Internacional redefiniu "planeta". Plutão não "limpou sua órbita", 
+                            tendo muitos vizinhos semelhantes, o que o reclassificou como Planeta Anão.
+                        </p>
+                    </div>
+                </div>
+                <div class="visual-block kuiper-visual">
+                    <!-- CSS Art for Kuiper Belt -->
+                    <div class="sun-point"></div>
+                    <div class="belt-ring"></div>
+                    <div class="pluto-orbit">
+                        <div class="pluto-dot"></div>
+                    </div>
+                    <span class="caption-visual">Esquema do Cinturão</span>
+                </div>
+            </section>
+
+            <div class="divider-line"></div>
+
+            <!-- Section 2: Oort Cloud -->
+            <section class="split-section oort-section fade-in">
+                 <div class="visual-block oort-visual">
+                    <div class="oort-sphere"></div>
+                    <div class="comet-path"></div>
+                </div>
+                <div class="content-block">
+                    <span class="label">2.000 a 200.000 UA</span>
+                    <h1>Nuvem de Oort</h1>
+                    <p class="description">
+                        Uma hipotética esfera gigante que envolve todo o Sistema Solar. É composta por bilhões de objetos 
+                        gelados e acredita-se ser o berço dos cometas de longo período. Proposta por Jan Oort em 1950.
+                    </p>
+                    <div class="fact-box">
+                        <h3>A Fronteira Final</h3>
+                        <p>
+                            A Nuvem de Oort marca o limite gravitacional do Sol. Nenhum objeto feito pelo homem chegou nem perto dela ainda; 
+                            a Voyager 1 levará 300 anos para chegar lá e 30.000 anos para atravessá-la.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

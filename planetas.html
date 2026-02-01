@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRO.BIO - Planetas do Sistema Solar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/planetas.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html" class="brand">ASTRO.BIO</a>
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Cientistas</a></li>
+            <li><a href="planetas.html" class="active">Planetas</a></li>
+            <li><a href="estrelas.html">Estrelas</a></li>
+            <li><a href="nuvem-oort-kuiper.html">Nuvem de Oort</a></li>
+            <li><a href="cosmologia.html">Cosmologia</a></li>
+        </ul>
+    </nav>
+
+    <main class="container planet-layout">
+        <!-- Planet Selector Sidebar -->
+        <aside class="planet-nav fade-in">
+            <h2>Sistema Solar</h2>
+            <ul class="planet-list">
+                <li class="active" data-planet="mercurio">Mercúrio</li>
+                <li data-planet="venus">Vênus</li>
+                <li data-planet="terra">Terra</li>
+                <li data-planet="marte">Marte</li>
+                <li data-planet="jupiter">Júpiter</li>
+                <li data-planet="saturno">Saturno</li>
+                <li data-planet="urano">Urano</li>
+                <li data-planet="netuno">Netuno</li>
+            </ul>
+        </aside>
+
+        <!-- Main Display Content -->
+        <section class="planet-details fade-in" id="planet-display">
+            <div class="planet-header">
+                <span class="label transport-label">Planeta Telúrico</span>
+                <h1 class="planet-name">Mercúrio</h1>
+            </div>
+
+            <div class="planet-visual">
+                 <div class="planet-circle" style="background: radial-gradient(circle at 30% 30%, #a5a5a5, #5e5e5e);"></div>
+            </div>
+
+            <div class="planet-stats">
+                <div class="stat-box">
+                    <span class="stat-label">Distância do Sol</span>
+                    <span class="stat-value">57.9 mi km</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Período Orbital</span>
+                    <span class="stat-value">88 dias</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Diâmetro</span>
+                    <span class="stat-value">4.879 km</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Luas</span>
+                    <span class="stat-value">0</span>
+                </div>
+                 <div class="stat-box">
+                    <span class="stat-label">Temp. Média</span>
+                    <span class="stat-value">167°C</span>
+                </div>
+            </div>
+
+            <p class="planet-fact">
+                O menor planeta do sistema solar e também o mais próximo do Sol. Apesar disso, não é o mais quente (Vênus ganha).
+            </p>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/planetas.js"></script>
+</body>
+</html>

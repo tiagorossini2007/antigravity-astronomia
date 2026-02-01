@@ -1,0 +1,124 @@
+/* cosmologia.css */
+
+body {
+    background-color: #0d1b2a; /* Navy dark base override */
+    color: #e0e1dd;
+}
+
+/* Nav override for dark mode */
+.main-nav {
+    background-color: #0d1b2a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.brand {
+    color: #e0e1dd;
+}
+
+.nav-links a {
+    color: #b0c4de;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+}
+
+.cosmo-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.cosmo-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.cosmo-header h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cosmo-header p {
+    font-size: 1.3rem;
+    color: #8d99ae;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.concept-card {
+    background: rgba(255, 255, 255, 0.05); /* Glassy dark */
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.concept-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.concept-card h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.concept-card p {
+    color: #b0c4de;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.learn-more {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    background: #ffffff;
+    color: #0d1b2a;
+}
+
+/* Footer Override to maintain dark theme consistency */
+.main-footer {
+    background-color: #08101a;
+    color: #8d99ae;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 768px) {
+    .cosmo-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        background-color: #0d1b2a;
+    }
+}

@@ -1,0 +1,146 @@
+/* nuvem.css */
+
+/* Overriding background for this page specifically or creating section backgrounds */
+.outer-solar-container {
+    padding: var(--spacing-lg) 0;
+}
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxl, 6rem); /* Larger gap */
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.label {
+    color: #6a4c93; /* Violet for this page */
+}
+
+h1 {
+    color: #1a1a2e; /* Deep dark blue */
+}
+
+.description {
+    font-size: 1.15rem;
+    color: var(--text-main);
+    margin-bottom: var(--spacing-md);
+}
+
+.fact-box {
+    background: #f0f0ff; /* Light violet bg */
+    padding: var(--spacing-md);
+    border-left: 4px solid #6a4c93;
+    border-radius: 4px;
+}
+
+.fact-box h3 {
+    font-size: 1.2rem;
+    color: #483d8b;
+    margin-bottom: 0.5rem;
+}
+
+/* Visuals */
+.visual-block {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f1020; /* Deep space bg */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Kuiper Visual */
+.sun-point {
+    width: 6px;
+    height: 6px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 0 10px yellow;
+}
+
+.belt-ring {
+    width: 200px;
+    height: 200px;
+    border: 30px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 20px rgba(100, 149, 237, 0.1);
+}
+
+.pluto-orbit {
+    width: 220px;
+    height: 180px;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    transform: rotate(-15deg);
+}
+
+.pluto-dot {
+    width: 4px;
+    height: 4px;
+    background: #d3d3d3;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+/* Oort Visual */
+.oort-sphere {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, transparent 40%, rgba(255,255,255,0.05) 80%, rgba(100,149,237,0.1) 100%);
+    position: absolute;
+}
+
+.comet-path {
+    width: 100px;
+    height: 350px;
+    border-left: 1px dotted rgba(255,255,255,0.4);
+    border-radius: 50%;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.caption-visual {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.divider-line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(46,74,62,0.2), transparent);
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .split-section {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .oort-section .visual-block {
+        order: -1;
+    }
+    
+    .fact-box {
+        text-align: left;
+    }
+}

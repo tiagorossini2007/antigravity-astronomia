@@ -1,0 +1,213 @@
+/* 
+ * APOLLO.WEB / ASTRO.BIO 
+ * Design System & Global Styles
+ */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg-color: #F5F0E8;        /* Creme quente */
+    --bg-secondary: #EBE4D8;    /* Variação para cards/seções */
+    --green-dark: #2E4A3E;      /* Dominante */
+    --green-medium: #3D6B57;    /* Hover/Acentos */
+    --green-light: #5A8A72;     /* Detalhes */
+    --text-main: #2C2C2C;       /* Quase preto */
+    --text-muted: #6B6B6B;      /* Cinza médio */
+    --white: #FFFFFF;
+    --gold: #C9A96E;            /* Dourado sutil */
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+    --spacing-xxl: 6rem;
+
+    /* Transitions */
+    --transition-smooth: all 0.4s ease;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--green-dark);
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; margin-bottom: var(--spacing-sm); }
+h3 { font-size: 1.8rem; margin-bottom: var(--spacing-xs); }
+
+.label {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    color: var(--green-light);
+    font-weight: 600;
+}
+
+.quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--green-medium);
+    margin: var(--spacing-md) 0;
+    position: relative;
+    padding-left: var(--spacing-md);
+    border-left: 2px solid var(--gold);
+}
+
+/* Navbar */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(46, 74, 62, 0.1);
+}
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--green-medium);
+}
+
+/* Mobile Menu Trigger */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--green-dark);
+}
+
+/* Utility */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-padding {
+    padding: var(--spacing-lg) 0;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FooterStyles */
+.main-footer {
+    background-color: var(--green-dark);
+    color: var(--white);
+    padding: var(--spacing-md);
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.footer-content {
+    opacity: 0.8;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    h1 { font-size: 2.8rem; }
+    
+    .main-nav {
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        padding: var(--spacing-md);
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    :root {
+        --spacing-lg: 3rem;
+        --spacing-md: 1.5rem;
+    }
+}
