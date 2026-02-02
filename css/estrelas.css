@@ -39,11 +39,22 @@
 }
 
 .star-visual {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     margin-bottom: var(--spacing-sm);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 
+        0 0 30px var(--star-color, #f5d76e),
+        0 0 60px var(--star-color, #f5d76e),
+        inset -10px -10px 20px rgba(0,0,0,0.1); /* Inner depth */
+    position: relative;
+    animation: pulse-glow 3s infinite ease-in-out;
+    background-color: var(--star-color, #f5d76e); /* Fallback */
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
 }
 
 .star-type {

@@ -24,9 +24,10 @@ h1 {
 }
 
 .description {
-    font-size: 1.15rem;
+    font-size: 1.4rem; /* Increased size significantly */
     color: var(--text-main);
     margin-bottom: var(--spacing-md);
+    line-height: 1.8;
 }
 
 .fact-box {

@@ -1,26 +1,26 @@
 /* cosmologia.css */
 
 body {
-    background-color: #0d1b2a; /* Navy dark base override */
-    color: #e0e1dd;
+    background-color: var(--bg-color); /* Match global light theme */
+    color: var(--text-main);
 }
 
-/* Nav override for dark mode */
+/* Nav override - Remove if matching global */
 .main-nav {
-    background-color: #0d1b2a;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background-color: var(--bg-color);
+    border-bottom: 1px solid rgba(46, 74, 62, 0.1);
 }
 
 .brand {
-    color: #e0e1dd;
+    color: var(--green-dark);
 }
 
 .nav-links a {
-    color: #b0c4de;
+    color: var(--text-main);
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #ffffff;
+    color: var(--green-medium);
 }
 
 .cosmo-container {
@@ -35,14 +35,14 @@ body {
 }
 
 .cosmo-header h1 {
-    color: #ffffff;
+    color: var(--green-dark);
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .cosmo-header p {
     font-size: 1.3rem;
-    color: #8d99ae;
+    color: var(--text-muted);
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
 }
@@ -54,44 +54,46 @@ body {
 }
 
 .concept-card {
-    background: rgba(255, 255, 255, 0.05); /* Glassy dark */
+    background: var(--white); /* Light card */
     padding: 2.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(46,74,62,0.1);
     transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .concept-card:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--white);
     transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(46,74,62,0.15);
 }
 
 .card-icon {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    color: var(--green-dark);
 }
 
 .concept-card h2 {
-    color: #ffffff;
+    color: var(--green-dark);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
 .concept-card p {
-    color: #b0c4de;
+    color: var(--text-muted);
     line-height: 1.6;
     margin-bottom: 2rem;
     flex-grow: 1;
 }
 
-.learn-more {
+.expand-btn {
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #ffffff;
+    border: 1px solid var(--green-dark);
+    color: var(--green-dark);
     padding: 0.8rem 1.5rem;
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
@@ -99,19 +101,16 @@ body {
     font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none; /* In case it's an anchor */
+    display: inline-block;
 }
 
-.learn-more:hover {
-    background: #ffffff;
-    color: #0d1b2a;
+.expand-btn:hover {
+    background: var(--green-dark);
+    color: var(--white);
 }
 
-/* Footer Override to maintain dark theme consistency */
-.main-footer {
-    background-color: #08101a;
-    color: #8d99ae;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
+/* Footer Override removed to match global style */
 
 @media (max-width: 768px) {
     .cosmo-header h1 {

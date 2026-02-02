@@ -1,98 +1,233 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ASTRO.BIO - Cientistas Revolucionários</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/cientistas.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Academy - História da Astronomia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Specific styles for history page */
+        .history-hero {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .history-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #000000; /* Black text requested */
+            background: none;
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            -webkit-text-fill-color: initial;
+        }
+
+        .history-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .timeline-section {
+            max-width: 1000px;
+            margin: 0 auto 4rem auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .timeline-section::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255,255,255,0.1);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 4px solid var(--bg-dark);
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-content h2 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: var(--accent-color);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-section::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            .timeline-dot {
+                left: 10px !important;
+            }
+        }
+    </style>
+</head>
+<body>
     <nav class="main-nav">
-      <a href="index.html" class="brand">ASTRO.BIO</a>
-      <button class="hamburger">☰</button>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Cientistas</a></li>
-        <li><a href="planetas.html">Planetas</a></li>
-        <li><a href="estrelas.html">Estrelas</a></li>
-        <li><a href="nuvem-oort-kuiper.html">Nuvem de Oort</a></li>
-        <li><a href="cosmologia.html">Cosmologia</a></li>
-      </ul>
+        <a href="index.html" class="brand">Astro Academy</a>
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">História</a></li>
+            <li><a href="cientistas.html">Cientistas</a></li>
+            <li><a href="planetas.html">Planetas</a></li>
+            <li><a href="estrelas.html">Estrelas</a></li>
+            <li><a href="nuvem-oort-kuiper.html">Fronteiras</a></li>
+            <li><a href="cosmologia.html">Cosmologia</a></li>
+        </ul>
     </nav>
 
-    <main class="container">
-      <!-- Sidebar Navigation for Scientists (Desktop) -->
-      <aside class="sidebar fade-in">
-        <div class="sidebar-icons">
-          <div
-            class="sidebar-item active"
-            data-target="galileu"
-            title="Galileu Galilei"
-          >
-            <!-- Telescope Icon -->
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path
-                d="M4 14l10-10M4 14l-3 3M4 14l5 1M14 4l1 5M14 4l6-2M20 22l-4-9M4 22l4-9"
-              />
-            </svg>
-          </div>
-          <!-- More icons will be controlled by JS logic or just strictly links for now -->
-        </div>
-      </aside>
+    <header class="history-hero fade-in">
+        <h1>O Legado das Estrelas</h1>
+        <p>Uma jornada através do tempo, desde os primeiros observadores da Babilônia até a exploração moderna do cosmos.</p>
+    </header>
 
-      <!-- Main Content Area: Carousel/Slider -->
-      <section class="scientist-display fade-in">
-        <div class="scientist-card active" id="galileu">
-          <div class="card-content">
-            <span class="label">Revolucionário #01</span>
-            <h1>Galileu Galilei</h1>
-            <p class="quote">"E, no entanto, ela se move."</p>
-
-            <div class="meta-info">
-              <div class="meta-block">
-                <span class="meta-label">Data</span>
-                <span class="meta-value">1564–1642</span>
-              </div>
-              <div class="meta-block">
-                <span class="meta-label">Origem</span>
-                <span class="meta-value">Itália</span>
-              </div>
+    <main class="timeline-section fade-in">
+        <!-- Babilônia -->
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="date">c. 1800 a.C.</span>
+                <h2>Astronomia Babilônica</h2>
+                <p>
+                    Nas planícies da Mesopotâmia, os babilônios foram os primeiros a registrar sistematicamente os movimentos celestes. 
+                    Eles identificaram padrões nos movimentos do Sol, da Lua e dos planetas, criando as bases para a matemática astronômica 
+                    e o conceito do zodíaco. Seus registros em tábuas de argila permitiram a previsão de eclipses com uma precisão notável.
+                </p>
             </div>
+        </div>
 
-            <p class="bio">
-              O "pai da astronomia observacional". Aperfeiçoou o telescópio e
-              fez descobertas fundamentais: as luas de Júpiter, as fases de
-              Vênus e as crateras lunares. Defendeu o heliocentrismo, desafiando
-              dogmas milenares.
-            </p>
-          </div>
-
-          <div class="card-visual">
-            <div class="image-wrapper">
-              <!-- Placeholder for Galileu -->
-              <div
-                class="img-placeholder"
-                style="background-color: #4a5c53"
-              ></div>
-              <span class="caption">Galileu Galilei</span>
+        <!-- Grécia Antiga -->
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="date">c. 400 a.C. - 150 d.C.</span>
+                <h2>A Era Grega</h2>
+                <p>
+                    Os gregos trouxeram a geometria para o céu. Aristarco propôs o primeiro modelo heliocêntrico, enquanto Eratóstenes mediu 
+                    a circunferência da Terra com precisão. Mais tarde, Ptolomeu consolidou o modelo geocêntrico no seu "Almagesto", 
+                    uma obra que dominaria a astronomia por mais de mil anos.
+                </p>
             </div>
-          </div>
         </div>
 
-        <!-- Controls (arrows) could go here -->
-        <div class="carousel-controls">
-          <button class="prev-btn">←</button>
-          <button class="next-btn">→</button>
+        <!-- Idade de Ouro Islâmica -->
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="date">c. 800 - 1200 d.C.</span>
+                <h2>Astronomia Islâmica</h2>
+                <p>
+                    Enquanto a Europa mergulhava na Idade Média, o mundo islâmico preservou e expandiu o conhecimento grego. 
+                    Astrônomos como Al-Battani refinaram medições, nomearam muitas estrelas (nomes que usamos até hoje, como Betelgeuse e Altair) 
+                    e desenvolveram astrolábios sofisticados para a navegação.
+                </p>
+            </div>
         </div>
-      </section>
+
+        <!-- Revolução Copernicana -->
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="date">1543</span>
+                <h2>A Revolução Copernicana</h2>
+                <p>
+                    Nicolau Copérnico publicou "Das Revoluções das Esferas Celestes", propondo que a Terra não era o centro do universo, 
+                    mas apenas mais um planeta orbitando o Sol. Isso iniciou uma mudança de paradigma que foi cimentada posteriormente 
+                    pelas observações de Galileu e as leis de Kepler.
+                </p>
+            </div>
+        </div>
+
+        <!-- A Era do Telescópio -->
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="date">1609 - Século XIX</span>
+                <h2>A Era do Telescópio</h2>
+                <p>
+                    Com a invenção do telescópio, o universo se abriu. Galileu viu luas em Júpiter; Herschel descobriu Urano; 
+                    Piazzzi descobriu Ceres. A astronomia deixou de ser apenas sobre mapear posições para entender a natureza física dos astros, 
+                    dando nascimento à astrofísica com a análise espectral da luz das estrelas.
+                </p>
+            </div>
+        </div>
+
+        <!-- Astronomia Moderna -->
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="date">Século XX - Presente</span>
+                <h2>A Fronteira Final</h2>
+                <p>
+                    Edwin Hubble nos mostrou que o universo é vasto e está em expansão. A Teoria da Relatividade de Einstein reescreveu a gravidade. 
+                    Nós pousamos na Lua, enviamos robôs a Marte e hoje, com telescópios como o James Webb, olhamos para as primeiras luzes do universo, 
+                    buscando responder à pergunta eterna: estamos sozinhos?
+                </p>
+            </div>
+        </div>
     </main>
 
     <script src="js/main.js"></script>
-    <script src="js/carrossel.js"></script>
-  </body>
+    <script src="js/footer.js"></script>
+</body>
+</body>
 </html>
